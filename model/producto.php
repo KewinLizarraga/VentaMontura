@@ -15,7 +15,7 @@ require_once ("conexion.php");
 class producto {
     //atributos o caracteristicas
     private $codigo;
-    private $nombre;
+    private $marca;
     private $precio;
     private $stock;
     private $modelo;
@@ -30,13 +30,14 @@ class producto {
     {
         $cn=new conexion();
         $cn->conectar();
-        $sql="SELECT *FROM producto WHERE id=".$codigo;
+        $sql="SELECT *FROM producto WHERE id_producto=".$codigo;
         $resultado=$cn->getEjecucionQuery($sql);
+
         if($resultado->num_rows > 0) //verifico si tiene registro
         {
             $registro=$resultado->fetch_array(MYSQLI_ASSOC);
-            $this->codigo=$registro['id'];
-            $this->nombre=$registro['nombre'];
+            $this->codigo=$registro['id_producto'];
+            $this->marca=$registro['marca'];
             $this->precio=$registro['precio'];
             $this->stock=$registro['stock'];
             $this->modelo=$registro['modelo'];
@@ -50,19 +51,19 @@ class producto {
     
     
     //metodo registro clientes
-    public function registrarProductos($nombre, $precio, $stock, $modelo, $categoria)
+    public function registrarProductos($marca, $precio, $stock, $modelo, $categoria)
     {
         $cn=new conexion();
         $cn->conectar();
-        $sql="INSERT INTO producto(nombre,precio,stock,modelo,categoria) VALUES('$nombre','$precio','$stock','$modelo','$categoria')";
+        $sql="INSERT INTO producto(marca,precio,stock,modelo,categoria) VALUES('$marca','$precio','$stock','$modelo','$categoria')";
         return $cn->setEjecucionQuery($sql);
     }
     
-    public function actualizaProductos($codigo, $nombre, $precio, $stock, $modelo, $categoria)
+    public function actualizaProductos($codigo, $marca, $precio, $stock, $modelo, $categoria)
     {
         $cn=new conexion();
         $cn->conectar();
-        $sql="UPDATE producto SET nombre='$nombre', precio='$precio', stock='$stock', modelo='$modelo', , categoria='$categoria'  WHERE id=$codigo";
+        $sql="UPDATE producto SET marca='$marca', precio='$precio', stock='$stock', modelo='$modelo', , categoria='$categoria'  WHERE id_producto=$codigo";
         return $cn->setEjecucionQuery($sql);    
     }
     
@@ -70,7 +71,7 @@ class producto {
     {
         $cn=new conexion();
         $cn->conectar();
-        $sql="DELETE FROM producto WHERE id=$codigo";
+        $sql="DELETE FROM producto WHERE id_producto=$codigo";
         return $cn->setEjecucionQuery($sql);    
     }    
 
@@ -97,8 +98,8 @@ class producto {
         $this->codigo = $codigo;
     }
 
-    public function setNombre($nombre) {
-        $this->nombre = $nombre;
+    public function setMarca($marca) {
+        $this->marca = $marca;
     }
 
     public function setPrecio($precio) {
@@ -121,8 +122,8 @@ class producto {
         return $this->codigo;
     }
 
-    public function getNombre() {
-        return $this->nombre;
+    public function getMarca() {
+        return $this->marca;
     }
 
     public function getPrecio() {
