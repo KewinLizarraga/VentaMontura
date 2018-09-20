@@ -1,20 +1,17 @@
 <?PHP
 session_start();
+
 if(isset($_SESSION['codigo']))
 {
     //tenemos valores anteriores registrados
     unset($_SESSION['codigo']); //para liberar espacio 
-    unset($_SESSION['producto']);
+    unset($_SESSION['marca']);
+    unset($_SESSION['modelo']);
+    unset($_SESSION['categoria']);
+    unset($_SESSION['stock']);
     unset($_SESSION['precio']);
-    unset($_SESSION['cantidad']);
-    unset($_SESSION['monto']);
 }
     
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +26,28 @@ if(isset($_SESSION['codigo']))
 </head>
 <body>
 
-<div class="container">
+<!--<div class="container">
+    Lista de productos registrados 
+    <div class="row">
+        <div id="muestraProductos">
+             aqui se mostrara la lista de productos 
+            <br/> <br/>
+            <label for="usr">LISTA DE PRODUCTOS</label>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>COD.</th>
+                        <th>MARCA</th>
+                        <th>MODELO</th>
+                        <th>CATEGORIA</th>
+                        <th>STOCK</th>
+                        <th>PRECIO UNID.</th>
+                    </tr>
+                    
+                </thead>
+            </table>
+        </div>
+    </div>-->
     
     <div class="row">
         <div class="col-sm-6">
@@ -64,7 +82,7 @@ if(isset($_SESSION['codigo']))
                             <th>NOMBRE</th>                       
                             <th>PRECIO</th>
                             <th>CANTIDAD</th>
-                            <th>MONTO</th>                           
+                            <th>MONTO</th> 
                         </tr>           
                     </thead>
             </table>
