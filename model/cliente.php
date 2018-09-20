@@ -32,12 +32,12 @@ class cliente {
     {
         $cn=new conexion();
         $cn->conectar();
-        $sql="SELECT *FROM cliente WHERE id=".$codigo;
+        $sql="SELECT *FROM cliente WHERE id_cliente=".$codigo;
         $resultado=$cn->getEjecucionQuery($sql);
         if($resultado->num_rows > 0) //verifico si tiene registro
         {
             $registro=$resultado->fetch_array(MYSQLI_ASSOC);
-            $this->codigo=$registro['id'];
+            $this->codigo=$registro['id_cliente'];
             $this->nombre=$registro['nombre'];
             $this->apellido=$registro['apellido'];
             $this->direccion=$registro['direccion'];
@@ -65,7 +65,7 @@ class cliente {
     {
         $cn=new conexion();
         $cn->conectar();
-        $sql="UPDATE cliente SET nombre='$nombre', apellido='$apellido', direccion='$direccion', telefono='$telefono', email='$email', password='$password'  WHERE id=$codigo";
+        $sql="UPDATE cliente SET nombre='$nombre', apellido='$apellido', direccion='$direccion', telefono='$telefono', email='$email', password='$password'  WHERE id_cliente=$codigo";
         return $cn->setEjecucionQuery($sql);    
     }
     
@@ -73,7 +73,7 @@ class cliente {
     {
         $cn=new conexion();
         $cn->conectar();
-        $sql="DELETE FROM cliente WHERE id=$codigo";
+        $sql="DELETE FROM cliente WHERE id_cliente=$codigo";
         return $cn->setEjecucionQuery($sql);    
     }    
 
