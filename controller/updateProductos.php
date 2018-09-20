@@ -17,7 +17,7 @@ $cli=new producto();
 if($cli->actualizaProductos($codigo, $marca, $precio, $stock, $modelo, $categoria))
 {
    //se acutalizo Correctamente
-    $ruta="Location: ../view/formReporteProductos.php";
+    $ruta="location: ../view/formReporteProductos.php";
     header($ruta);
 }
 else 
