@@ -17,11 +17,11 @@ $categoria=$_POST['categoria'];
 $obj=new producto();
 if($obj->registrarProductos($marca, $precio, $stock, $modelo, $categoria))
 {
-  $ruta="Location: ../view/formRegistroClientes.php?msj=1";
+  $ruta="Location: ../view/formRegistroProductos.php?msj=1";
 }
 else
 {
-  $ruta="Location: ../view/formRegistroClientes.php?msj=0";
+  $ruta="Location: ../view/formRegistroProductos.php?msj=0";
 }
 
 header($ruta);
