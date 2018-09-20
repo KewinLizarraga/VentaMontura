@@ -19,6 +19,7 @@ while($fila=$resultado->fetch_array(MYSQLI_ASSOC))
       "</td><td>".$fila['direccion'].
       "</td><td>".$fila['telefono'].
       "</td><td>".$fila['email'].
+      "</td><td>".$fila['password'].
       "</td><td>".
       "<a href='../view/formUpdateCliente.php?cod=".$fila['id']."'><img src='../recursos/edit01.jpg'></a>".
       "<a href='../view/formDeleteCliente.php?cod=".$fila['id']."'><img src='../recursos/delete01.png'></a>".

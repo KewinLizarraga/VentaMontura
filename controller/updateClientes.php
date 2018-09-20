@@ -12,9 +12,10 @@ $apellido=$_POST['apellido'];
 $direccion=$_POST['direccion'];
 $telefono=$_POST['telefono'];
 $email=$_POST['email'];
+$email=$_POST['password'];
  
 $cli=new cliente();
-if($cli->actualizaCliente($codigo, $nombre, $apellido, $direccion, $telefono, $email))
+if($cli->actualizaCliente($codigo, $nombre, $apellido, $direccion, $telefono, $email, $password))
 {
    //se acutalizo Correctamente
     $ruta="Location: ../view/formReporteClientes.php";

@@ -29,15 +29,10 @@ and open the template in the editor.
             <p>APELLIDO: <input type="text" name="apellido" ></p>
             <p>DIRECCION: <input type="text" name="direccion" ></p>
             <p>TELEFONO: <input type="tel" name="telefono" ></p>
-              <p>EMAIL: <input type="email" name="email" ></p>
+            <p>EMAIL: <input type="email" name="email" ></p>
+            <p>PASSWORD: <input type="password" name="password" ></p>
              
-            </p>
-            <p><input type="submit" name="btn" value="REGISTRAR">
-                
-            
-            </p>
-        </form>
-             
-            
+            <p><input type="submit" name="btn" value="REGISTRAR"></p>
+        </form>      
     </body>
 </html>

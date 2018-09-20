@@ -20,6 +20,7 @@ class cliente {
     private $direccion;
     private $telefono;
     private $email;
+    private $password;
     
     
     public function __construct() {
@@ -42,6 +43,7 @@ class cliente {
             $this->direccion=$registro['direccion'];
             $this->telefono=$registro['telefono'];
             $this->email=$registro['email'];
+            $this->password=$registro['password'];
         }
         
         $resultado->free(); // libero recursos usados 
@@ -51,19 +53,19 @@ class cliente {
     
     
     //metodo registro clientes
-    public function registrarClientes($nombre, $apellido, $direccion, $telefono, $email)
+    public function registrarClientes($nombre, $apellido, $direccion, $telefono, $email, $password)
     {
         $cn=new conexion();
         $cn->conectar();
-        $sql="INSERT INTO cliente(nombre,apellido,direccion,telefono,email) VALUES('$nombre','$apellido','$direccion','$telefono','$email')";
+        $sql="INSERT INTO cliente(nombre,apellido,direccion,telefono,email,password) VALUES('$nombre','$apellido','$direccion','$telefono','$email','$password')";
         return $cn->setEjecucionQuery($sql);
     }
     
-    public function actualizaCliente($codigo, $nombre, $apellido, $direccion, $telefono,$email)
+    public function actualizaCliente($codigo, $nombre, $apellido, $direccion, $telefono, $email, $password)
     {
         $cn=new conexion();
         $cn->conectar();
-        $sql="UPDATE cliente SET nombre='$nombre', apellido='$apellido', direccion='$direccion', telefono='$telefono', email='$email'  WHERE id=$codigo";
+        $sql="UPDATE cliente SET nombre='$nombre', apellido='$apellido', direccion='$direccion', telefono='$telefono', email='$email', password='$password'  WHERE id=$codigo";
         return $cn->setEjecucionQuery($sql);    
     }
     
@@ -113,8 +115,12 @@ class cliente {
         $this->telefono = $telefono;
     }
     
-     public function setEmail($email) {
+    public function setEmail($email) {
         $this->email = $email;
+    }
+    
+    public function setPassword($password) {
+        $this->password = $password;
     }
 
     public function getCodigo() {
@@ -141,6 +147,9 @@ class cliente {
         return $this->email;
     }
 
+    public function getPassword() {
+        return $this->password;
+    }
 
     
     

@@ -12,18 +12,11 @@ and open the template in the editor.
     <body>
     <CENTER>
         <h4>PAGINA DE INICIO</h4>
-        <p><a href="formRegistroClientes.php">REGISTRO DE CLIENTES</a></p>
-        <p><a href="formReporteClientes.php"> REPORTE DE CLIENTES (UPDATE - DELETE)</a></p>
-        <br>
-        <p><a href="formRegistroProductos.php">REGISTRO DE PRODUCTOS</a></p>
-        <p><a href="formReporteProductos.php"> REPORTE DE PRODUCTOS (UPDATE - DELETE)</a></p>
-        <br>
-<!--        <p><a href="formVentas.php"> FORMULARIO DE VENTAS</a></p>-->
-         
-        
+        <p><a href="login.php">CLIENTE</a></p>
+        <p><a href="administrador.php">ADMINISTRADOR</a></p>
     </CENTER>
         <?php
-        echo "";
+        // put your code here
         ?>
     </body>
 </html>

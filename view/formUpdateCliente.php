@@ -22,7 +22,7 @@ and open the template in the editor.
             $direccion=$cn->getDireccion();
             $telefono=$cn->getTelefono();
             $email=$cn->getEmail();
-            
+            $password=$cn->getPassword();
         }
         else
         {
@@ -32,9 +32,8 @@ and open the template in the editor.
             $direccion="---";
             $telefono="---";
             $email="---";
+            $password="---";
         }
-       
-
         ?>
         
         <form action="../controller/updateClientes.php" method="POST">
@@ -44,11 +43,9 @@ and open the template in the editor.
             <p>DIRECCION: <input type="text" name="direccion" value="<?php echo $direccion; ?>" ></p>
             <p>TELEFONO: <input type="tel" name="telefono" value="<?php echo $telefono; ?>" ></p>
             <p>EMAIL: <input type="email" name="email" value="<?php echo $email; ?>" ></p>
-                        </p>
-            <p><input type="submit" name="btn" value="ACTUALIZAR">
-                
+            <p>PASSWORD: <input type="password" name="password" value="<?php echo $password; ?>" ></p>
             
-            </p>
+            <p><input type="submit" name="btn" value="ACTUALIZAR"></p>
         </form>
     </body>
 </html>

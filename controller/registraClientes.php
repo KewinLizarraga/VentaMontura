@@ -13,9 +13,10 @@ $apellido=$_POST['apellido'];
 $direccion=$_POST['direccion'];
 $telefono=$_POST['telefono'];
 $email=$_POST['email'];
+$password=$_POST['password'];
 
 $obj=new cliente();
-if($obj->registrarClientes($nombre, $apellido, $direccion, $telefono,$email))
+if($obj->registrarClientes($nombre, $apellido, $direccion, $telefono, $email, $password))
 {
   $ruta="Location: ../view/formRegistroClientes.php?msj=1";
 }
