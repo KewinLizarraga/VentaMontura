@@ -15,4 +15,3 @@ else
     //si no se elimino
     echo "Error al eliminar";
 }
-
