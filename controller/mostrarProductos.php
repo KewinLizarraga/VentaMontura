@@ -13,15 +13,15 @@ $resultado=$obj->getListaProductos();
 while($fila=$resultado->fetch_array(MYSQLI_ASSOC))
 {
     echo "<tr>".
-      "<td>".$fila['id'].
+      "<td>".$fila['id_producto'].
       "</td><td>".$fila['marca'].
       "</td><td>".$fila['precio'].
       "</td><td>".$fila['stock'].
       "</td><td>".$fila['modelo'].
       "</td><td>".$fila['categoria'].
       "</td><td>".
-      "<a href='../view/formUpdateProducto.php?cod=".$fila['id']."'><img src='../recursos/edit01.jpg'></a>".
-      "<a href='../view/formDeleteProducto.php?cod=".$fila['id']."'><img src='../recursos/delete01.png'></a>".
+      "<a href='../view/formUpdateProductos.php?cod=".$fila['id_producto']."'><img src='../recursos/edit.png' width='30px'></a>".
+      "<a href='../view/formDeleteProductos.php?cod=".$fila['id_producto']."'><img src='../recursos/delete.png' width='30px'></a>".
             
     "</td></tr>";
     
