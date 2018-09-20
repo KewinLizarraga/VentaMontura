@@ -36,9 +36,9 @@ and open the template in the editor.
 
         ?>
         
-        <form action="../Controller/updateClientes.php" method="POST">
+        <form action="../controller/updateProductos.php" method="POST">
             <p>CODIGO: <input type="text" name="codigo" value="<?php echo $codigo; ?>" ></p>
-            <p>MARCA: <input type="text" name="nombre" value="<?php echo $marca; ?>" ></p>
+            <p>MARCA: <input type="text" name="marca" value="<?php echo $marca; ?>" ></p>
             <p>PRECIO: <input type="text" name="precio" value="<?php echo $precio; ?>"></p>
             <p>STOCK: <input type="number" name="stock" value="<?php echo $stock; ?>" ></p>
             <p>MODELO: <input type="text" name="modelo" value="<?php echo $modelo; ?>" ></p>
